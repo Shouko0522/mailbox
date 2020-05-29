@@ -3,6 +3,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,12 +18,10 @@
       <input class= "input-field" type="text" name="daterange" />
       <button class="btn"><svg class="search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.9803 18"><defs><style>.a{fill:#666;}</style></defs><title>icon_search</title><path class="a" d="M17.81684,17.04048,12.86753,12.064a7.33089,7.33089,0,1,0-.79573.79645L17.018,17.83373a.5629.5629,0,1,0,.79885-.79325ZM7.32474,13.47375a6.16023,6.16023,0,0,1-6.16583-6.1546V7.31352a6.16022,6.16022,0  ,1,1,6.16583,6.16023Z"/></svg></button>
       </div>
+      <p>Results :<p id="demo"></p>mail(s)</p>
     </div>
 
-
-
     <style>
-
       .calender{
         height: 22px;
       }
@@ -42,11 +42,25 @@
         border: 2px solid LightGray ;
         border-radius: 6px;
       }
-
-
     </style>
 
+    <script src="faker.js">
+      $data = [];
+
+      for ($i = 0; $i < 100; $i++) {
+          $data[] = [
+              'randomEmail1'     => $faker->internet.email(),
+              'randomEmail2'      => $faker->internet.email() ,
+              'date'     => $faker->date(),
+          ];
+      }
+
+      document.getElementById("demo").innerHTML = Data.length;
+
+    </script>
+
     <script>
+
       $(function() {
       $('input[name="daterange"]').daterangepicker({
         opens: 'left'
@@ -54,7 +68,6 @@
       console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
       });
       });
-
 
 
     </script>
