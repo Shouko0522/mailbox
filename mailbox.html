@@ -44,18 +44,8 @@
       }
     </style>
 
-    <script src="faker.js">
-      $data = [];
-
-      for ($i = 0; $i < 100; $i++) {
-          $data[] = [
-              'randomEmail1'     => $faker->internet.email(),
-              'randomEmail2'      => $faker->internet.email() ,
-              'date'     => $faker->date(),
-          ];
-      }
-
-      document.getElementById("demo").innerHTML = Data.length;
+    <script src="javascripts/faker.js" type="text/javascript"></script>
+    <script src="javascripts/custom.js" type="text/javascript"></script>
 
     </script>
 
@@ -69,6 +59,7 @@
       });
       });
 
+      document.getElementById("demo").innerHTML = Data.length;
 
     </script>
   </body>
