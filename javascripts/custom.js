@@ -1,3 +1,5 @@
+'use strict';
+
 const ALL_DATA = [];
 
 // Fake an Email 100 times
