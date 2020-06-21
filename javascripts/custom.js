@@ -29,6 +29,7 @@ $(function() {
         document.getElementById("date").innerHTML = item.date;
       })
 
+
       console.log(filtered)
       // console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
     });
@@ -36,6 +37,23 @@ $(function() {
   });
 
 document.getElementById("total-email").innerHTML = filtered.length;
+
+
+const num = filtered.length;
+  for (let i = 0; i < num; i++ ) {
+  const th = document.createElement('th');
+  th.textContent = filtered[i].sender;
+  th.textContent = filtered[i].receiver;
+  th.textContent = filtered[i].subject;
+  th.textContent = filtered[i].date;
+
+
+
+  document.body.appendChild(th);
+
+  }
+
+
 
 
 
