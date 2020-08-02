@@ -42,14 +42,11 @@ document.getElementById("total-email").innerHTML = filtered.length;
 const num = filtered.length;
   for (let i = 0; i < num; i++ ) {
   const th = document.createElement('th');
-  th.textContent = filtered[i].sender;
-  th.textContent = filtered[i].receiver;
-  th.textContent = filtered[i].subject;
-  th.textContent = filtered[i].date;
-
-
-
   document.body.appendChild(th);
+  th.textContent += filtered[i].sender;
+  th.textContent += filtered[i].receiver;
+  th.textContent += filtered[i].subject;
+  th.textContent += filtered[i].date;
 
   }
 
