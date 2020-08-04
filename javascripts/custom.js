@@ -23,10 +23,10 @@ $(function() {
       filtered = ALL_DATA.filter(data => data.date > start && data.date < end);
 
       filtered.forEach((item) => {
-        document.getElementById("from").innerHTML = item.sender;
-        document.getElementById("to").innerHTML = item.receiver;
-        document.getElementById("subject").innerHTML = item.subject;
-        document.getElementById("date").innerHTML = item.date;
+        document.getElementById("from").innerHTML+= item.sender;
+        document.getElementById("to").innerHTML += item.receiver;
+        document.getElementById("subject").innerHTML += item.subject;
+        document.getElementById("date").innerHTML += item.date;
       })
 
 
@@ -39,16 +39,15 @@ $(function() {
 document.getElementById("total-email").innerHTML = filtered.length;
 
 
-const num = filtered.length;
+const num =  filtered.length;
   for (let i = 0; i < num; i++ ) {
-  const th = document.createElement('th');
-  document.body.appendChild(th);
-  th.textContent += filtered[i].sender;
-  th.textContent += filtered[i].receiver;
-  th.textContent += filtered[i].subject;
-  th.textContent += filtered[i].date;
-
-  }
+  const td = document.createElement('td');
+  document.body.appendChild(td);
+  td.textContent += filtered[i].sender;
+  td.textContent += filtered[i].receiver;
+  td.textContent += filtered[i].subject;
+  td.textContent += filtered[i].date;
+}
 
 
 
